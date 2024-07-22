@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Confidencial</title>
+
+    <!-- Meta Tags for Open Graph -->
+    <meta property="og:title" content="CONFIDENCIAL">
+    <meta property="og:description" content="Não abra a menos que tenha sido escolhido">
+    <meta property="og:image" content="https://g3midia.github.io/confidencial/confidencial.jpg">
+    <meta property="og:url" content="https://confidencial.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="condidencial">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: red;
+        }
+        .container {
+            text-align: center;
+            width: 40%;
+            @media (max-width: 768px) {
+                width: 90%;
+            }
+        }
+
+        .container p {
+            font-size: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            background-color: transparent;
+            border: 2px solid red;
+            color: red;
+            padding: 20px 40px;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .small {
+            font-size: 16px;
+        }
+
+        .image {
+            width: 20%;
+            @media (max-width: 768px) {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="initial" class="container">
+        <button onclick="showInvitation()">CONFIDENCIAL<br><span class="small">Clique aqui</span></button>
+    </div>
+    <div id="invitation" class="container hidden">
+        <img class="image" src="confidencial.jpg">
+        <h1>Convite de Aniversário</h1>
+        <p>Você foi estritamente selecionado para participar da minha festa de aniversário, este convite é pessoal e intransferível!</p>
+        <p>Data: 22/07/2024</p>
+        <p>Hora: 19:30</p>
+        <p>Local: Na minha casa</p>
+        <p>Estou ansioso para celabrar com você, será um momento de comemoração entre amigos!</p>
+        <button onclick="showInitial()">Fechar</button>
+    </div>
+
+    <script>
+        function showInvitation() {
+            document.getElementById('initial').classList.add('hidden');
+            document.getElementById('invitation').classList.remove('hidden');
+        }
+
+        function showInitial() {
+            document.getElementById('invitation').classList.add('hidden');
+            document.getElementById('initial').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
